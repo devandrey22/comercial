@@ -1,0 +1,850 @@
+.steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+
+.done {
+    background-color: var(--prm-color);
+    color: #fff;
+}
+.step-item {
+    z-index: 10;
+    text-align: center;
+}
+#progress {
+    position: absolute;
+    width: 93%;
+    z-index: 5;
+    height: 10px;
+    margin-left: 18px;
+    margin-bottom: 18px;
+}
+/* to customize progress bar */
+#progress::-webkit-progress-value {
+    background-color: #6351ce;
+    transition: .5s ease;
+}
+#progress::-webkit-progress-bar {
+    background-color: rgb(223, 217, 217);
+
+}
+
+
+
+/* 
+.step-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: gray;
+    transition: .4s;
+}
+.step-button[aria-expanded="true"] {
+    width: 60px;
+    height: 60px;
+    background-color: #6351ce;
+    color: #fff;
+}
+ */
+
+
+
+ .step-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #6351ce;
+    transition: .4s;
+    color: white;
+}
+.step-button[aria-expanded="true"] {
+    padding: 10px 20px;
+    background-color: gray;
+    color: #fff;
+}
+
+
+
+/* 
+
+.step-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: gray;
+    transition: .4s;
+}
+.step-button[aria-expanded="true"] {
+    width: 60px;
+    height: 60px;
+    background-color: #6351ce;
+    color: #fff;
+}
+ */
+
+
+body {
+    max-width: 100%;
+    height: auto;
+}
+
+
+a {
+    color: black;
+}
+
+.csscountry {
+
+    color: rgba(128, 0, 128, 0.195);
+    font-size: 10px;
+}
+
+.cssname {
+    color: purple;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.cssnavitem {
+    font-weight: bolder;
+    color: black;
+}
+
+
+
+.nav-link {
+    color: black;
+}
+
+
+
+.cssnavitem a:hover {
+    -moz-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+
+/*Edit starts here*/
+.cssnavitem {
+    position: relative;
+}
+
+.cssnavitem::after {
+    content: '';
+    display: block;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    height: 2px;
+    background: rgb(104, 12, 104);
+    transition: cubic-bezier(.77, 0, .18, 1) 0.2s;
+    text-decoration: none;
+}
+
+.cssnavitem:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+.cssnavitem {
+    transition: cubic-bezier(.77, 0, .18, 1) 0.2s;
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .cssname {
+        padding-left: 10px;
+    }
+
+    .cssnotshowupmobile {
+        display: none;
+    }
+
+    .csstitleslider {
+        font-size: smaller;
+        position: relative;
+        bottom: 0px;
+        padding-top: 10px;
+    }
+
+    .showinlaptopsection {
+        display: none;
+    }
+
+    #carouselcaption {
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .cssprefootershowlaptop {
+        display: none;   
+    }
+
+    .cssfootermobile {
+        flex-direction: column;
+    }
+
+    .cssfootertitlemobile {
+        padding-bottom: 15px;
+    }
+    
+    .cssproductsfootermobile {
+        padding-top: 30px;
+    }
+
+    .cssmobiletitle {
+        font-size: 35px;
+    }
+
+    .cssshowlaptopcampanas {
+        display: none;
+    }
+
+    #showlaptopform {
+        display: none;
+    
+    }
+
+    .cssformbodyarea {
+        position: relative;
+        right: 0px;
+    }
+    
+    .csstitlewebsitemobile {
+        font-size: 35px;
+    }
+
+}
+
+
+@media only screen and (max-width: 390px) {
+    .cssbtn {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: smaller;
+        position: relative;
+        top: 10%;
+    }
+
+    .cssimage {
+        height: 200%;
+    }
+
+    .auto-slider {
+        margin-bottom: 5px;
+    }
+
+    .cssslider {
+        padding-bottom: 0px;
+    }
+
+    .cssnotshowupmobile {
+        display: none;
+
+    }
+
+    .csstitleslider {
+        font-size: smaller;
+        position: relative;
+        bottom: 0px;
+        color: rgb(54, 69, 79);
+        padding-top: 10px;
+    }
+
+    .showinlaptopsection {
+        display: none;
+    }
+    #carouselcaption {
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .cssprefootershowlaptop {
+     display: none;   
+    }
+
+    .cssfootermobile {
+        flex-direction: column;
+    }
+    .cssfootertitlemobile {
+        padding-bottom: 15px;
+    }
+   .cssproductsfootermobile {
+    padding-top: 30px;
+   }
+   .csscontactfootermobile {
+    padding-top: 20px;
+   }
+   .cssmobiletitle {
+    font-size: 35px;
+}
+    .csstitlewebsitemobile {
+        font-size: 35px;
+    }
+    
+
+
+.cssshowlaptopcampanas {
+    display: none;
+}
+
+#showlaptopform {
+    display: none;
+
+}
+.cssformbodyarea {
+    position: relative;
+    right: 0px;
+}
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    .cssimage {
+        height: 200%;
+    }
+
+    .auto-slider {
+        margin-bottom: 5px;
+    }
+
+    .cssnotshowuplaptop {
+        display: none;
+    }
+
+    .cssshowmobilesection {
+        display: none;
+    }
+    #carouselcaption {
+        font-size: 25px;
+    }
+    .cssprefootershowmobile {
+        display: none;
+    }
+    .csscontactfootermobile {
+        padding-top: 20px;
+       }
+
+    .cssshowmobilecampanas {
+        display: none;
+    }
+    .cssprefootershowmobile {
+        display: none;
+    }
+
+    #showmobileform {
+        display: none;
+    
+    }
+
+    .cssformbodyarea .cssformbody {
+        position: relative;
+        right: 100px;
+    }
+  
+
+}
+
+
+
+
+
+/*SLIDER HOMEPAGE*/
+
+.auto-slider {
+    position: relative;
+    box-sizing: content-box;
+    display: inline-block;
+    padding: 10px 10px 20px;
+    background: #fff;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+
+div#slider {
+    overflow: hidden;
+}
+
+div#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+div#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 8s sliding ease infinite;
+}
+
+
+/* Slider indicator */
+.indicator {
+    width: 100%;
+    max-width: 100%;
+    height: 6px;
+    background: #6351ce;
+    position: absolute;
+    bottom: 0;
+
+    animation: indicating 8s ease infinite;
+
+}
+
+
+@keyframes sliding {
+    0% {
+        left: 0%;
+    }
+
+    20% {
+        left: -100%;
+    }
+
+    40% {
+        left: -200%;
+    }
+
+    60% {
+        left: -300%;
+    }
+
+
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes indicating {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+
+.csstitle {
+    color: purple;
+    font-weight: bold;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.csstitle2 {
+    color: purple;
+    font-weight: bold;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.cssbackground {
+    background-image: url("/MapCR7.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cssbackground2 {
+    background-image: url("/titleimpacto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+
+
+#carouselcaption {
+    color: #1c2331;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+#carouseldiv {
+
+    text-align: center;
+}
+
+
+
+/* Carrusel banner */
+
+.carousel-inner .carousel-item {
+    height: auto;
+}
+
+
+
+
+/* Divider */
+
+.divider {
+    /* minor cosmetics */
+    display: table;
+    font-size: 24px;
+    text-align: center;
+    width: 80%;
+    /* divider width */
+    margin: 30px auto;
+    /* spacing above/below */
+}
+
+.divider span {
+    display: table-cell;
+    position: relative;
+}
+
+.divider span:first-child,
+.divider span:last-child {
+    width: 50%;
+    top: 13px;
+    /* adjust vertical align */
+    -moz-background-size: 100% 2px;
+    /* line width */
+    background-size: 100% 2px;
+    /* line width */
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+.divider span:first-child {
+    /* color changes in here */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#000));
+    background-image: -webkit-linear-gradient(180deg, transparent, #000);
+    background-image: -moz-linear-gradient(180deg, transparent, #000);
+    background-image: -o-linear-gradient(180deg, transparent, #000);
+    background-image: linear-gradient(90deg, transparent, #000);
+}
+
+.divider span:nth-child(2) {
+    color: #000;
+    padding: 0px 10px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.divider span:last-child {
+    /* color changes in here */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+    background-image: -webkit-linear-gradient(180deg, #000, transparent);
+    background-image: -moz-linear-gradient(180deg, #000, transparent);
+    background-image: -o-linear-gradient(180deg, #000, transparent);
+    background-image: linear-gradient(90deg, #000, transparent);
+}
+
+
+
+
+
+
+.cssbuttona {
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #253737;
+    background: ghostwhite;
+    background: -webkit-gradient(linear, left top, left bottom, from(#dfdfe2), to(#dfdfe2));
+    background: -webkit-linear-gradient(top, #dfdfe2, #dfdfe2);
+    background: -moz-linear-gradient(top, #dfdfe2, #dfdfe2);
+    background: -ms-linear-gradient(top, #dfdfe2, #dfdfe2);
+    background: -o-linear-gradient(top, #dfdfe2, #dfdfe2);
+    background-image: -ms-linear-gradient(top, #dfdfe2 0%, #dfdfe2 100%);
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: rgba(186, 160, 184, 0.978) 0 1px 0, inset rgba(186, 160, 184, 1.58) 0 1px 0;
+    -moz-box-shadow: rgba(186, 160, 184, 0.978) 0 1px 0, inset rgba(186, 160, 184, 1.58) 0 1px 0;
+    box-shadow: rgba(186, 160, 184, 0.978) 0 1px 0, inset rgba(186, 160, 184, 1.58) 0 1px 0;
+    text-shadow: #333333 0 1px 0;
+    color: #6351ce;
+}
+
+
+.cssbuttona:hover {
+    border: 1px solid white;
+    text-shadow: #333333 0 1px 0;
+    background: #6351ce;
+    background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#d8d7dc));
+    background: -webkit-linear-gradient(top, #d8d7dc, #d8d7dc);
+    background: -moz-linear-gradient(top, #d8d7dc, #d8d7dc);
+    background: -ms-linear-gradient(top, #d8d7dc, #d8d7dc);
+    background: -o-linear-gradient(top, #d8d7dc, #d8d7dc);
+    background-image: -ms-linear-gradient(top, #77b2b0 0%, #d8d7dc 100%);
+    color: white;
+
+}
+
+
+
+.cssroutes {
+    background-image: url("/ruta4.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cssbackgroundvisibility {
+    background-image: url("/visibility.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cssnosotrosbackground {
+    background-image: url("/aboutus.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cssnosotrosbackground1 {
+    background-image: url("/backgroundphone.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.cssredes {
+    background-image: url("/holidayinn2.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.cssredes5 {
+    background-image: url("/aboutusbackground.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/vonique-64.64-bold.ttf);
+}
+
+@font-face {
+    font-family: myFirstFont1;
+    src: url(/Vonique64.ttf);
+}
+
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+
+.cssformbody {
+    margin-left:auto;
+    margin-right:auto;
+    width: 343px;
+    height: 333px;
+    padding:30px;
+    border: 0px solid #6351ce;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #6351ce; 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+    padding-right: 25px;
+}
+
+textarea{
+	background: rgba(255,255,255,.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px; 
+    width: 276px;
+    height: 110px;
+    border: 0px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:45px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+input {
+    width: 276px;
+    height: 48px;
+    border: 0px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+input[type=submit] {
+    cursor:pointer;
+}
+
+input.name {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px; 
+	  padding-left:45px;
+}
+
+input.email {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
+	  padding-left:45px;
+}
+
+input.message {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px;
+	  padding-left:45px;
+}
+
+::-webkit-input-placeholder {
+	  color: #fff;
+}
+
+:-moz-placeholder{ 
+    color: #fff; 
+}
+
+::-moz-placeholder {
+    color: #fff;
+}
+
+:-ms-input-placeholder {  
+	  color: #fff; 
+}
+
+input:focus, textarea:focus { 
+	  background-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+	  overflow: hidden; 
+}
+
+.btnform {
+	  width: 138px;
+	  height: 44px;
+	  -moz-border-radius: 4px;
+	  -webkit-border-radius: 4px;
+	  border-radius: 4px;
+	  float:right;
+    border: 0px solid #253737;
+    background: #416b68;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
+    background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+    background: -moz-linear-gradient(top, #2d2172, #6351ce);
+    background: -ms-linear-gradient(top, #2d2172, #6351ce);
+    background: -o-linear-gradient(top, #2d2172, #6351ce);
+    background-image: -ms-linear-gradient(top, #2d2172 0%, #6351ce 100%);
+    padding: 10.5px 21px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    text-shadow: #333333 0 1px 0;
+    color: #e1e1e1;
+}
+
+.btnform:hover {
+    border: 0px solid #253737;
+    text-shadow: #333333 0 1px 0;
+    background: #416b68;
+    background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#416b68));
+    background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+    background: -moz-linear-gradient(top, #2d2172, #6351ce);
+    background: -ms-linear-gradient(top, #2d2172, #6351ce);
+    background: -o-linear-gradient(top, #2d2172, #6351ce);
+    background-image: -ms-linear-gradient(top, #77b2b0 0%, #416b68 100%);
+    color: #fff;
+ }
+
+.btnform:active {
+    margin-top:1px;
+    text-shadow: #333333 0 -1px 0;
+    border: 0px solid #253737;
+    background: #6da5a3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#416b68), to(#416b68));
+    background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+    background: -moz-linear-gradient(top, #2d2172, #6351ce);
+    background: -ms-linear-gradient(top, #2d2172, #6351ce);
+    background: -o-linear-gradient(top, #2d2172, #6351ce);
+    background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
+    color: #fff;
+    -webkit-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+   }
+
+
