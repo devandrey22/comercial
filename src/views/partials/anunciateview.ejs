@@ -7,27 +7,7 @@
         <div style="display: flex; flex-direction: column; padding-left: 5%; padding-right: 5%;  justify-content: center; justify-items: center;">
             <div class="container csscontainer" >
                 <div class="accordion" id="accordionExample">
-                   <!--  <div class="steps">
-                        <progress id="progress" value=0 max=100></progress>
-                        <div class="step-item">
-                            <button class="step-button text-center" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                1
-                            </button>
-                            <div class="step-title">
-                                Tus datos
-                            </div>
-                        </div>
-                        <div class="step-item cssstepi" style="position: relative; left: 10px;">
-                            <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                2
-                            </button>
-                            <div class="step-title">
-                                Tu anuncio
-                            </div>
-                        </div>
-                    </div> -->
+            
     
                     <div class="card" style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
                         <div id="headingOne" style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
@@ -39,33 +19,34 @@
     
                                 <div style="display: flex; flex-direction: column; padding: 20px 10px;">
     
-                                    <form>
+                                    <form action="/infocliente" method="POST">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Nombre</label>
-                                                <input type="email" class="form-control" id="inputEmail4"
-                                                    placeholder="Nombre">
+                                                <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" value="" autofocus>
                                             </div>
     
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Email</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="Email">
+                                            <input name="email" type="email" class="form-control" id="email" placeholder="Email" value="">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress2">Teléfono</label>
-                                            <input type="number" class="form-control" id="inputAddress2"
-                                                placeholder="Teléfono">
+                                            <input name="telefono" type="number" class="form-control" id="telefono" placeholder="Teléfono" value="">
                                         </div>
     
-                                        <div class="form-group" style="padding-top: 10px;">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                <label class="form-check-label" for="gridCheck">
-                                                    ¿Anunciarás un evento?
-                                                </label>
+                                        <div style="display: flex; flex-direction: row; justify-content: center">
+    
+                                            <div class="step-item" style="position: relative; top: 13px;">
+                                                <button class="step-button text-center collapsed" type="submit" data-bs-toggle="collapse" style="background-color: white;  color: #6351ce; font-weight: bold;"
+                                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Siguiente
+                                                </button>
+                        
                                             </div>
                                         </div>
+
                                     </form>
     
                                 </div>
@@ -73,6 +54,7 @@
                         </div>
                     </div>
     
+                    
                     <div class="card"
                         style="background-color: #6351ce; color: white; font-family: 'Raleway', sans-serif;  border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
                         <div id="headingTwo" style="border-radius: 0px;">
@@ -81,101 +63,87 @@
                             data-bs-parent="#accordionExample" style="border-radius: 0px;">
                             <div class="card-body"
                                 style="background-color: #6351ce; color: white; font-family: 'Raleway', sans-serif; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
-    
-    
-    
+                               
                                 <div style="display: flex; flex-direction: column; padding: 20px 10px; border-radius: 20px; ">
     
-                                    <form>
+<!--                                     <form action="/stats" enctype="multipart/form-data"  method="post">
+ -->
+                                    <form action="/stats" method="POST">
+
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Título del anuncio</label>
-                                                <input type="email" class="form-control" id="inputEmail4"
-                                                    placeholder="Título">
+                                                <input name="titulo" type="text" class="form-control" id="titulo" placeholder="Título">
                                             </div>
-    
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Frecuencia</label>
     
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Selecciona tu paquete</option>
-                                                <option value="1"> <span style="font-weight: bold;"> Diario </span> -
+                                            <select id="list" class="form-select" aria-label="Default select example" name="plan">
+                                                <option value="Selecciona tu paquete">Selecciona tu paquete</option>
+                                                <option value="diario"> <span style="font-weight: bold;"> Diario </span> -
                                                     ₡10,000</option>
-                                                <option value="2"> <span style="font-weight: bold;"> Semanal </span> -
+                                                <option value="semanal"> <span style="font-weight: bold;"> Semanal </span> -
                                                     ₡60,000</option>
-                                                <option value="3"> <span style="font-weight: bold;"> Mensual </span> -
+                                                <option value="mensual"> <span style="font-weight: bold;"> Mensual </span> -
                                                     ₡200,000</option>
                                             </select>
-    
+    <!--                                          <input type="text" value="" style="opacity: 0%;" id="display-frecuenciavalue" name="plan">
+  -->
+            
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputAddress2" style="padding-right: 20px;">Fecha(s)</label>
-    
-    
-                                            <input type="text" name="daterange" value=""
-                                                style="padding-right: 30px; padding-left: 15px;" />
-    
+                                            <label id="" for="inputAddress2" style="padding-right: 20px;">Fecha(s)</label>
+                                            <input id="fechas" type="date" name="fechas" value="" style="padding-right: 30px; padding-left: 15px;" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputAddress2">¿Dónde deseas que se muestre tu anuncio?</label>
+                                            <label for="inputAddress">¿Dónde deseas que se muestre tu anuncio?</label>
     
-                                            <div class="form-check"
-                                                style="display: flex; flex-direction: column; justify-content: start;">
-                                                <div style="display: flex; flex-direction: row;">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        Todo el país
-                                                    </label>
-                                                </div>
-    
-    
-                                                <div style="display: flex; flex-direction: row;">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        San José
-                                                    </label>
-                                                </div>
-    
-    
-                                                <div style="display: flex; flex-direction: row;">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        Alajuela
-                                                    </label>
-                                                </div>
-    
-    
-                                                <div style="display: flex; flex-direction: row;">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        Heredia
-                                                    </label>
-                                                </div>
-    
-    
-                                                <div style="display: flex; flex-direction: row;">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                    <label class="form-check-label" for="gridCheck">
-                                                        Cartago
-                                                    </label>
-                                                </div>
-    
-    
+                                            <select id="listzonas" class="form-select" aria-label="Default select example" name="zona">
+                                                <option value="Mostrar tu anuncio en">Mostrar tu anuncio en</option>
+                                                <option value="Todoelpais">Todo el país </option>
+                                                <option value="SanJose">San José</option>
+                                                <option value="Alajuela">Alajuela</option>
+                                                <option value="Heredia">Heredia</option>
+                                                <option value="Cartago">Cartago</option>
+                                            </select>
+                                           <!-- <input type="text" value="" style="opacity: 0%;" id="display-zona" name="zona">
+                                          -->
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputAddress">Confirma tu email</label>
+                                            <input name="email" type="email" class="form-control" id="email" placeholder="Email" value="">
+                                        </div>
+
+                                      
+                                     <!--    <div class="form-group" style="padding-top: 10px;">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="esevento" onchange="getSelectedEvento();">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    ¿Anunciarás un evento?
+                                                </label>
                                             </div>
-    
-                                        </div>
-                                        <div class="form-group">
+                                            <div  >
+                                                <h1 id="display-evento"></h1>
+                                              
+                                            </div>
+                                        </div> -->
+
+
+                                       <!--  <div class="form-group">
                                             <label class="form-label" for="customFile">Cargar anuncio</label>
-                                            <input type="file" class="form-control" id="customFile" />
-                                        </div>
+                                            <input type="file" name="uploaded_file" class="form-control" id="customFile" />
+                                        </div> 
+ -->
+
+                                        <button class="btn btn-default" style="background-color: rgb(11, 171, 8); color: white; border: none; border-radius: 10px; padding: 10px 25px; border: none;" type="submit">
+                                            Enviar solicitud
+                                        </button>         
+
     
                                     </form>
-                                    <div style="display: flex; flex-direction: row; justify-content: center; justify-items: center; padding-top: 15px;">
-                                        <button  style="background-color: greenyellow; border-radius: 20px; padding: 5px 15px; border: none;">
-                                            Enviar solicitud
-                                        </button>
-                                    </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -183,25 +151,7 @@
     
                     <br>
     
-                    <div style="display: flex; flex-direction: row; justify-content: center">
-    
-    
-    
-                        <div class="step-item">
-                            <button class="step-button text-center" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Anterior
-                            </button>
-    
-                        </div>
-                        <div class="step-item" style="position: relative; left: 12px; color: white;">
-                            <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Siguiente
-                            </button>
-    
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

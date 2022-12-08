@@ -1,7 +1,29 @@
 import express from 'express';
 import { Router } from 'express';
 
+import multer from 'multer';
+
+import pool from '../database.js'; 
+
 const router = Router()
+const app = express();
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + "-" + Date.now()+".jpg")
+    }
+  })
+  
+const upload = multer({ storage: storage })
+
+router.post('/stats', upload.single('uploaded_file'), function (req, res) {
+    console.log(req.file, req.body)
+});
+ 
 
 router.get('/', (req, res) => {
     res.render('index.ejs');
@@ -56,5 +78,36 @@ router.get('/anuncios', (req, res) => {
 router.get('/contactanos', (req, res) => {
     res.render('contactanos.ejs');
 });
+
+
+// POSTS
+
+
+router.post('/infocliente', async (req, res, next) => {
+    const { nombre, email, telefono } = req.body;
+    const newCustomer = {
+        Nombre: nombre,
+        Email: email,
+        Telefono: telefono
+    };
+    await pool.query('INSERT INTO clientes set ?', [newCustomer]);
+     console.log(newCustomer);
+})
+
+
+router.post('/stats', async (req, res, next) => {
+    const {  titulo, plan, fechas, zona, email } = req.body;
+    const newAd = {
+        titulo: titulo,
+        plan: plan,
+        fechas: fechas,
+        zona: zona,
+        email: email
+    };
+    await pool.query('INSERT INTO anuncios set ?', [newAd]);
+    console.log(newAd);
+
+})
+
 
 export default router

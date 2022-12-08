@@ -647,3 +647,14 @@ div#slider figure {
 
 
 
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/vonique-64.64-bold.ttf);
+}
+
+@font-face {
+    font-family: myFirstFont1;
+    src: url(/Vonique64.ttf);
+}
+
