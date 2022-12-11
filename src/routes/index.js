@@ -1,8 +1,9 @@
 import express from 'express';
 import { Router } from 'express';
-
+import path, {dirname, join} from 'path'
+import { fileURLToPath } from "url"
 import multer from 'multer';
-
+import nodemailer from 'nodemailer';
 import pool from '../database.js'; 
 
 const router = Router()
@@ -22,6 +23,38 @@ const upload = multer({ storage: storage })
 
 router.post('/stats', upload.single('uploaded_file'), function (req, res) {
     console.log(req.file, req.body)
+
+   
+    var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: 'alissatradingrobot@gmail.com',
+            pass: 'oyufffxxyfehqayv'
+        },
+        tls: {
+            ciphers: "SSLv3",
+        },
+    });
+
+
+    var mailOptions = {
+        from: 'alissatradingrobot@gmail.com',
+        to: 'alertasmarketz@gmail.com',
+        subject: 'ZONA ha recibido un nuevo anuncio',
+        text: 'Revísalo pronto'
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+    res.render('confirmacion.ejs')
 });
  
 
@@ -49,9 +82,6 @@ router.get('/anunciate', (req, res) => {
     res.render('anunciate.ejs');
 });
 
-router.get('/perfil', (req, res) => {
-    res.render('perfil.ejs');
-});
 
 router.get('/admin', (req, res) => {
     res.render('admin.ejs');
@@ -84,30 +114,137 @@ router.get('/contactanos', (req, res) => {
 
 
 router.post('/infocliente', async (req, res, next) => {
-    const { nombre, email, telefono } = req.body;
+    const { nombre, email, telefono, titulo, plan, fechas, zona } = req.body;
     const newCustomer = {
         Nombre: nombre,
         Email: email,
-        Telefono: telefono
-    };
-    await pool.query('INSERT INTO clientes set ?', [newCustomer]);
-     console.log(newCustomer);
-})
-
-
-router.post('/stats', async (req, res, next) => {
-    const {  titulo, plan, fechas, zona, email } = req.body;
-    const newAd = {
+        Telefono: telefono,
         titulo: titulo,
         plan: plan,
         fechas: fechas,
-        zona: zona,
-        email: email
+        zonas: zona,
     };
-    await pool.query('INSERT INTO anuncios set ?', [newAd]);
-    console.log(newAd);
+    await pool.query('INSERT INTO clientes set ?', [newCustomer]);
 
+    var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: 'alissatradingrobot@gmail.com',
+            pass: 'oyufffxxyfehqayv'
+        },
+        tls: {
+            ciphers: "SSLv3",
+        },
+    });
+
+
+    var mailOptions = {
+        from: 'alissatradingrobot@gmail.com',
+        to: 'alertasmarketz@gmail.com',
+        subject: 'ZONA ha recibido un nuevo cliente',
+        text: 'Contáctalo pronto'
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+     console.log(newCustomer);
+  
 })
 
 
+/* 
+router.get('/perfil',  function (req, res) {
+    pool.getConnection(function(err) {
+    var sql = 'SELECT * from clientes';
+
+     pool.query(sql, function(error, result){
+       
+        if(error) console.log(error);
+
+        res.render('./perfil.ejs' , { clients: result})
+
+        })
+    
+})}); 
+ */
+
+router.get('/search-email',  function (req, res) {
+
+    pool.getConnection(function(err) {
+        var sql = 'SELECT * from anuncios';
+    
+         pool.query(sql, function(error, result){
+           
+            if(error) console.log(error);
+    
+            res.render('./search-email.ejs' , { clients: result})
+    
+            })
+        
+})});
+
+
+router.get('/search',  function (req, res) {
+
+    var email = req.query.email;
+    console.log(email);
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT * FROM clientes WHERE Email LIKE ?" , [email], function(error, result){
+       
+        if(error) console.log(error);
+        res.render('./search-email.ejs', { clients: result} )
+
+
+        })
+    
+})});
+
+
+
 export default router
+
+/* 
+
+router.get('/perfil',  function (req, res) {
+    pool.getConnection(function(err) {
+    var sql = 'SELECT * from clientes';
+
+     pool.query(sql, function(error, result){
+       
+        if(error) console.log(error);
+
+        res.render('./perfil.ejs' , { clients: result})
+
+        })
+    
+})});  */
+
+
+/* 
+
+router.get('/search',  function (req, res) {
+
+    var email = req.query.email;
+
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT * FROM clientes WHERE Email LIKE ?" , [email], function(error, result){
+       
+        if(error) console.log(error);
+        res.render('./perfil', { clients: result} )
+
+
+        })
+    
+})});
+ */

@@ -5,9 +5,8 @@ import { fileURLToPath } from "url"
 import session from "express-session";
 import MySQLStore from "express-mysql-session";
 import pool from './database.js';
-
-
 import multer from 'multer';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -15,6 +14,8 @@ const app = express();
 
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
+
+
 
 //VIEWS
 
@@ -28,10 +29,6 @@ app.set('views', join(__dirname, 'views'))
 app.use(express.static(join(__dirname, 'public')))
 
 
-//ROUTES
-app.use(router);
-
-
 
 //MIDDLEWARES
 
@@ -40,12 +37,23 @@ app.use(session({ //para configurar la sesion
     secret: 'ZONA', //como va a guardar la sesion
     resave: false, //para que no se empiece a renovar la sesión
     saveUninitialized: false, //para que no se reestablezca la sesion
+    cookie: {maxAge: 60000},
     store: new MySQLStore({host: 'us-cdbr-east-06.cleardb.net',
-    
     database: 'heroku_512db339e82573c',
     user: 'b619de97e9fb35',
     password: '0e94fd5b'}) //en donde guardar la sesion. base de datos o servidor, en este caso base de datos, importar express-mysql-session
 }));
+
+app.use((req, res, next) => {
+
+    app.locals.clients = req.clients;
+
+    next();
+})
+
+
+//ROUTES
+app.use(router);
 
 
 

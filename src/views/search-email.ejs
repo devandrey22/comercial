@@ -59,6 +59,36 @@
 <%- include('partials/perfilview') %>
 
 
+<div class="cssshowlaptopcampanas" style="font-family: 'Raleway', sans-serif; "> 
+
+    <div style="display: grid; grid-template-rows: 200px; margin-left: 400px; font-family: 'Raleway', sans-serif; ">
+        <div class="" style=" padding-left: 20px; padding-top: 60px;">
+            <h5 style="color: black; position: relative; top: 45px;">Busca tus anuncios</h5>
+     
+            <div class="container" style="position: relative; left: 20px;">
+                <form action="/search"  >
+                <div class="search"> 
+                    <div class="row"> 
+                        <div class="col-md-10"> 
+                            <div class="search-1"> 
+                                <i class='bx bx-search-alt'></i> 
+                                <input type="search" placeholder="Digita tu email" name="email"  autofocus> 
+                            </div> 
+                        </div> 
+                        <input type="submit" value="Search" class="col-md-2" placeholder="Submit" style="background-color: #6351ce; color: white; border: none;">
+                    </div> 
+                </div>
+            </form> 
+            </div> 
+        </div>
+    </div>
+</div>
+    
+
+
+
+
+
 <%- include('partials/adcards') %>
 
 
@@ -84,18 +114,6 @@
                     /* Set the width of the sidebar to 0 (hide it) */
                     function closeNav() {
                         document.getElementById("mySidepanel").style.width = "0";
-                    }
-
-                    function emailsearch() {
-                        var newSearch = document.getElementById("searchapi").value;
-                        if (newSearch != '') {
-                            pool.query("SELECT * FROM clientes WHERE Email LIKE ?", [newSearch], (err, data) => {
-                                if (err) { console.log(err) }
-                                else {
-                                    res.redirect('perfil.ejs', { data: data })
-                                }
-                            })
-                        }
                     }
 
 

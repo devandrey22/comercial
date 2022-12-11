@@ -233,6 +233,10 @@ a {
         font-size: 35px;
     }
 
+    .cssconfirmacionlaptop {
+        display: none;
+    }
+
 }
 
 
@@ -315,6 +319,9 @@ a {
     position: relative;
     right: 0px;
 }
+.cssconfirmacionlaptop {
+    display: none;
+}
 
 }
 
@@ -362,6 +369,9 @@ a {
         right: 100px;
     }
   
+    .cssborder {
+        border-radius: 30px;
+    }
 
 }
 
@@ -758,7 +768,7 @@ input.name {
 }
 
 input.email {
-	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
+	  background: url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
 	  padding-left:45px;
 }
 
@@ -782,6 +792,8 @@ input.message {
 :-ms-input-placeholder {  
 	  color: #fff; 
 }
+
+
 
 input:focus, textarea:focus { 
 	  background-color: rgba(0, 0, 0, 0.2);

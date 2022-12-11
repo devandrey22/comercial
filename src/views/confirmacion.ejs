@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        @media only screen and (min-width: 800px) {
+
+        .cssconfirmacionmobile {
+            
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 390px) {
+        .cssconfirmacionmobile {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 80px) {
+        .cssconfirmacionlaptop {
+            display: none;
+        }
+
+        .cssborder {
+          border-radius: 20px;
+        }
+    }
+
+
+    </style>
+</head>
+<body style="margin-top: 0px; width: 100%;">
+
+    <%- include('partials/navbar') %>
+
+ <div class="cssconfirmacionlaptop" > 
+<div style="height: 500px; " > 
+ <div style="padding-left: 35%; margin-top: 7%;"> 
+      <div class="card text-center cssborder " style="width: 600px; border-radius: 20px;">
+        <div class="card-body cssborder" style="border-radius: 20px;">
+          <h4 class="card-title" style="position: relative; top: 15px; padding-top: 15px;">Hemos recibido tu solicitud</h4>
+          <img src="/greencheck.png" alt="" style="height: 150px; width: 150px;">
+
+          <h5 class="card-text" style="padding-bottom: 25px;">Te contactaremos en breve</h5>
+          <a href="/" class="btn btn-primary" > <span style="padding-left: 15px; padding-right: 15px;"> Listo</span> </a>
+        </div>
+      </div>
+    </div>
+</div>
+</div> 
+
+
+<div class="cssconfirmacionmobile"> 
+<div style="height: 500px; "> 
+        <div style="padding-left: 5%; padding-right: 5%; margin-top: 7%;" style="border-radius: 10px;"> 
+             <div class="card text-center cssconfirmacionmobile" style="border-radius: 10px;" >
+               <div class="card-body">
+                 <h4 class="card-title" style="position: relative; top: 7px; padding-top: 7px; padding-left: 10px; padding-right: 10px;">Hemos recibido tu solicitud</h4>
+                 <img src="/greencheck.png" alt="" style="height: 100px; width: 100px;">
+       
+                 <p class="card-text" style="padding-bottom: 20px;">Te contactaremos en breve</p>
+                 <a href="/" class="btn btn-primary" > <span style="padding-left: 15px; padding-right: 15px;"> Listo</span> </a>
+               </div>
+             </div>
+           </div>
+</div>
+</div> 
+
+    <%- include('partials/footerview') %>
+
+    
+    <%- include('partials/footer') %>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+  
+</body>
+</html>
