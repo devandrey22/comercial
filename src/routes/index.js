@@ -83,9 +83,6 @@ router.get('/anunciate', (req, res) => {
 });
 
 
-router.get('/admin', (req, res) => {
-    res.render('admin.ejs');
-});
 
 router.get('/disponibilidad', (req, res) => {
     res.render('disponibilidad.ejs');
@@ -161,21 +158,20 @@ router.post('/infocliente', async (req, res, next) => {
 })
 
 
+router.get('/admin', async (req, res, next) => {
 
-router.get('/admin',  function (req, res) {
-    pool.getConnection(function(err) {
-    var sql = 'SELECT * from clientes';
-
-     pool.query(sql, function(error, result){
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT * FROM clientes" ,  function(error, result){
        
         if(error) console.log(error);
-        console.log(result)
-       /*  res.render('./admin.ejs' , { clients: result}) */
+        res.render('./admin.ejs', { clients: result} )
+
 
         })
     
-})}); 
- 
+})});
+
 
 router.get('/search-email',  function (req, res) {
 

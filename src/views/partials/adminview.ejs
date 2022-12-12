@@ -76,20 +76,20 @@
       </tr>
     </thead>
     <tbody>
-      <% for(var i = 0; i < clients.length; i++) { %>     
+        <% clients.forEach(function(clients){ %>
          <tr>
         
-        <th scope="row"><%=i; %></th>
-        <td><%= clients[i].ID %></td>
-        <td><%= clients[i].Nombre %></td>
-        <td><%= clients[i].Email %></td>
-        <td><%= clients[i].Telefono %></td>
-        <td><%= clients[i].titulo %></td>
-        <td><%= clients[i].plan %></td>
-        <td><%= clients[i].fechas %></td>
-        <td><%= clients[i].zonas %></td>
-        <td><%= clients[i].fechadesolicitud %></td>
-        <td><%= clients[i].status %></td>
+        <th scope="row"></th>
+        <td><%= clients.ID %></td>
+        <td><%= clients.Nombre %></td>
+        <td><%= clients.Email %></td>
+        <td><%= clients.Telefono %></td>
+        <td><%= clients.titulo %></td>
+        <td><%= clients.plan %></td>
+        <td><%= clients.fechas %></td>
+        <td><%= clients.zonas %></td>
+        <td><%= clients.fechadesolicitud %></td>
+        <td><%= clients.status %></td>
         <td>
           <div style="display: row; font-size: smaller;">
               <button class="btn-primary">Email</button>
@@ -100,7 +100,7 @@
         </td>
 
       </tr>
-      <% } %>
+      <% }) %>
       </tbody>
   </table>
 
