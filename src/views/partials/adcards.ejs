@@ -50,7 +50,7 @@
                     <img src="/city2.png" class="card-img-top" alt="..."
                         style=" border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="card-body">
-                        <h5 class="card-title" style="position: relative; top: 7px;">
+                        <h5 id="gettitulo" class="card-title" style="position: relative; top: 7px;">
                             <%= clients.titulo %>
                         </h5>
                     </div>
@@ -63,10 +63,39 @@
                                 <%= clients.zonas %>
                             </span>
                         </li>
+                        
                     </ul>
                     <div class="card-body"
-                        style="display: flex; flex-direction: row; justify-content: space-around; background-color: #6351ce; color: white; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                        <a href="#" class="card-link" style="color: white;">Editar</a>
+                        style="display: flex; flex-direction: row; width: 302px; justify-content: space-around; background-color: #6351ce; color: white; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-left: 10px; padding-right: 10px;">
+        
+                        <nav class="navbar " >
+                            <div class="container-fluid" style="display: flex; flex-direction: column;">
+                                <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                                    aria-expanded="false" aria-label="Toggle navigation" >
+                                    <span style="color: white; position: relative; margin-bottom: 10px; ">Editar</span>
+                            </a>
+                                <div class="collapse" id="navbarToggleExternalContent" style="padding-top: 25px;" >
+                                    <div  style="display: flex; flex-direction: column; color: white; align-items: flex-start; align-content: flex-start; background-color: #6351ce;">
+                                       
+                                        <form action="/cambios" method="POST" >
+                                            <input type="email" id="confirmemail" name="confirmemail" placeholder="Confirma tu email" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+<br>
+                                        <input type="text" id="confirmtitulo" name="confirmtitulo" placeholder="Confirma el titulo de tu anuncio" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+                                        <br>
+                                        <textarea type="text" id="cambiossolicitados" name="cambiossolicitados" placeholder="Cambios a realizar" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; padding-left: 20px;" autofocus></textarea>
+
+                                        <br>
+                                        <button class="btn btn-success btn-block" type="submit" value="Enviar"> Enviar </button>
+                                        <br>
+                                       </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </nav>
+                       
                     </div>
                 </div>
             </div>
@@ -107,6 +136,9 @@
                     </p>
                     <p>
                         <%= clients.Email %>
+                    </p>
+                    <p id="getid" >
+                        <%= clients.id %>
                     </p>
                 </div>
             </div>
@@ -158,10 +190,10 @@
                         
                         <div style="width: 70%;"> 
                                 <i class=' '></i> 
-                                <input type="search" placeholder="Digita tu email" name="email" autofocus style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;" > 
+                                <input type="search" class="cssinputa" placeholder="Digita tu email" name="email" autofocus style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;" > 
                         </div> 
                         
-                        <input type="submit" value="Buscar" placeholder="Submit" style="background-color: #6351ce; color: white; padding-left: 10px; padding-right: 10px; border: none; border-top-right-radius: 10px; border-bottom-right-radius: 10px; width: 30%;">
+                        <input type="submit" value="Buscar" class="cssinputa" placeholder="Submit" style="background-color: #6351ce; color: white; padding-left: 10px; padding-right: 10px; border: none; border-top-right-radius: 10px; border-bottom-right-radius: 10px; width: 30%;">
                     </div> 
                 </div>
             </form>
@@ -198,9 +230,36 @@
                                 </span>
                             </li>
                         </ul>
-                        <div class="card-body"
-                            style="display: flex; flex-direction: row; justify-content: space-around; background-color: #6351ce; color: white; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                            <a href="#" class="card-link" style="color: white;">Editar</a>
+                        <div class="card-body"style="display: flex; flex-direction: row; justify-content: space-around; background-color: #6351ce; color: white; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-left: 10%;  padding-right: 10%; ">
+                           
+                            <nav class="navbar " >
+                                <div class="container-fluid" style="display: flex; flex-direction: column;">
+                                    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#navbarToggleExternalContenti" aria-controls="navbarToggleExternalContent"
+                                        aria-expanded="false" aria-label="Toggle navigation" >
+                                        <span style="color: white; position: relative; margin-bottom: 10px; ">Editar</span>
+                                        </a>
+                                    <div class="collapse" id="navbarToggleExternalContenti" style="padding-top: 25px;" >
+                                        <div  style="display: flex; flex-direction: column; color: white; align-items: flex-start; align-content: flex-start; background-color: #6351ce; ">
+                                           
+                                            <form action="/cambios" method="POST" >
+                                                <input type="email" id="confirmemail" name="confirmemail" placeholder="Confirma tu email" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+                                      <br>
+                                            <input type="text" id="confirmtitulo" name="confirmtitulo" placeholder="Confirma el titulo de tu anuncio" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+                                            <br>
+                                            <textarea type="text" id="cambiossolicitados" name="cambiossolicitados" placeholder="Cambios a realizar" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; padding-left: 20px;" autofocus></textarea>
+                        
+                                            <br>
+                                            <button class="btn btn-success btn-block" type="submit" value="Enviar"> Enviar </button>
+                                            <br>
+                                           </form>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            </nav>
+
                         </div>
                     </div>
                 </div>
@@ -208,3 +267,5 @@
         </div>
     </div>
     </div>
+
+

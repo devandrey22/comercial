@@ -49,8 +49,6 @@
 
 
 
-
-
   
 <div class="cssshowlaptopcampanas"> 
 
@@ -61,6 +59,8 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">ID</th>
+
         <th scope="col">Nombre</th>
         <th scope="col">Email</th>
         <th scope="col">Type</th>
@@ -70,21 +70,26 @@
         <th scope="col">Location</th>
         <th scope="col">Ad Content</th>
         <th scope="col">Status</th>
+        <th scope="col">Fecha solicitud</th>
+
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto@outlook.com</td>
-        <td>Event</td>
-        <td>Coca Cola Ad</td>
-        <td>Plan Diario</td>
-        <td>13/03/2023</td>
-        <td>Todo el país</td>
-        <td>@mdo</td>
-        <td>Activo</td>
+      <% for(var i = 0; i < clients.length; i++) { %>     
+         <tr>
+        
+        <th scope="row"><%=i; %></th>
+        <td><%= clients[i].ID %></td>
+        <td><%= clients[i].Nombre %></td>
+        <td><%= clients[i].Email %></td>
+        <td><%= clients[i].Telefono %></td>
+        <td><%= clients[i].titulo %></td>
+        <td><%= clients[i].plan %></td>
+        <td><%= clients[i].fechas %></td>
+        <td><%= clients[i].zonas %></td>
+        <td><%= clients[i].fechadesolicitud %></td>
+        <td><%= clients[i].status %></td>
         <td>
           <div style="display: row; font-size: smaller;">
               <button class="btn-primary">Email</button>
@@ -95,52 +100,11 @@
         </td>
 
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mark</td>
-        <td>Otto@outlook.com</td>
-        <td>Event</td>
-        <td>Coca Cola Ad</td>
-        <td>Plan Diario</td>
-        <td>13/03/2023</td>
-        <td>Todo el país</td>
-        <td>@mdo</td>
-        <td>Activo</td>
-        <td>
-          <div style="display: row; font-size: smaller;">
-              <button class="btn-primary">Email</button>
-              <button class="btn-success">Confirmar</button>
-              <button class="btn-danger">Cancelar</button>
-
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Mark</td>
-        <td>Otto@outlook.com</td>
-        <td>Event</td>
-        <td>Coca Cola Ad</td>
-        <td>Plan Diario</td>
-        <td>13/03/2023</td>
-        <td>Todo el país</td>
-        <td>@mdo</td>
-        <td>Activo</td>
-        <td>
-          <div style="display: row; font-size: smaller;">
-              <button class="btn-primary">Email</button>
-              <button class="btn-success">Confirmar</button>
-              <button class="btn-danger">Cancelar</button>
-
-          </div>
-        </td>
-      </tr>
-    </tbody>
+      <% } %>
+      </tbody>
   </table>
-
 
   </div>
 </div>
   
-  
-  
+

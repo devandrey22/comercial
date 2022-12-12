@@ -161,21 +161,21 @@ router.post('/infocliente', async (req, res, next) => {
 })
 
 
-/* 
-router.get('/perfil',  function (req, res) {
+
+router.get('/admin',  function (req, res) {
     pool.getConnection(function(err) {
     var sql = 'SELECT * from clientes';
 
      pool.query(sql, function(error, result){
        
         if(error) console.log(error);
-
-        res.render('./perfil.ejs' , { clients: result})
+        console.log(result)
+       /*  res.render('./admin.ejs' , { clients: result}) */
 
         })
     
 })}); 
- */
+ 
 
 router.get('/search-email',  function (req, res) {
 
@@ -209,6 +209,20 @@ router.get('/search',  function (req, res) {
     
 })});
 
+
+
+router.post('/cambios', async (req, res, next) => {
+    const  {confirmemail, cambiossolicitados, confirmtitulo }  = req.body; 
+    const newcambio = {
+        Email: confirmemail,
+        Título: confirmtitulo,
+        cambios: cambiossolicitados
+    }
+    await pool.query('INSERT INTO cambiossolicitados set ?', [newcambio]);
+ 
+    res.render('confirmacion.ejs')
+  
+})
 
 
 export default router
