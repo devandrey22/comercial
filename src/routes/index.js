@@ -83,23 +83,16 @@ router.get('/anunciate', (req, res) => {
 });
 
 
+router.get('/clientes', function (req, res) {
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT DISTINCT Email FROM clientes" ,  function(error, result){
+            if(error) console.log(error);
+            res.render('./clientes.ejs', { clients: result} )
+        })
+    
+})});
 
-router.get('/disponibilidad', (req, res) => {
-    res.render('disponibilidad.ejs');
-});
-
-router.get('/clientes', (req, res) => {
-    res.render('clientes.ejs');
-});
-
-
-router.get('/mensajes', (req, res) => {
-    res.render('mensajes.ejs');
-});
-
-router.get('/anuncios', (req, res) => {
-    res.render('anuncios.ejs');
-});
 
 
 router.get('/contactanos', (req, res) => {
@@ -206,6 +199,33 @@ router.get('/search',  function (req, res) {
 })});
 
 
+router.get('/busquedad',  function (req, res) {
+
+    var buscar = req.query.inquiry;
+    console.log(buscar);
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT * FROM clientes WHERE Email LIKE ? OR Nombre LIKE ? OR Telefono LIKE ? OR titulo LIKE ? OR plan LIKE ?" , [buscar, buscar, buscar, buscar, buscar], function(error, result){
+        if(error) console.log(error);
+        res.render('./adminbusquedad.ejs', { resultadobusquedad: result} )
+
+
+        }) 
+    
+})});
+
+
+router.get('/anuncios', function (req, res) {
+    pool.getConnection(function(error) {
+        if(error) console.log(error); 
+        pool.query("SELECT Email, COUNT(*)>0 AS Repetition FROM clientes GROUP BY Email" ,  function(error, result){
+            if(error) console.log(error);
+            console.log(result)
+            res.render('./anuncios.ejs', { clients: result} );
+        });
+})});
+
+
 
 router.post('/cambios', async (req, res, next) => {
     const  {confirmemail, cambiossolicitados, confirmtitulo }  = req.body; 
@@ -221,40 +241,76 @@ router.post('/cambios', async (req, res, next) => {
 })
 
 
-export default router
-
-/* 
-
-router.get('/perfil',  function (req, res) {
-    pool.getConnection(function(err) {
-    var sql = 'SELECT * from clientes';
-
-     pool.query(sql, function(error, result){
-       
-        if(error) console.log(error);
-
-        res.render('./perfil.ejs' , { clients: result})
-
-        })
-    
-})});  */
+router.post('/mensajes', async (req, res, next) => {
+    const  {Nombre, Email, Mensaje }  = req.body; 
+    const newMensaje = {
+       Nombre,
+       Email,
+       Mensaje
+    }
+    await pool.query('INSERT INTO mensajes set ?', [newMensaje]);
+ 
+    res.render('confirmacion.ejs')
+  
+})
 
 
-/* 
 
-router.get('/search',  function (req, res) {
-
-    var email = req.query.email;
+router.get('/mensajes', (req, res) => {
 
     pool.getConnection(function(error) {
         if(error) console.log(error);
-        pool.query("SELECT * FROM clientes WHERE Email LIKE ?" , [email], function(error, result){
-       
+        pool.query("SELECT * FROM mensajes", function(error, result){
         if(error) console.log(error);
-        res.render('./perfil', { clients: result} )
-
-
+        res.render('mensajes.ejs', { clients: result} );
         })
     
 })});
- */
+
+
+
+router.get('/disponibilidad', (req, res) => {
+   
+    pool.getConnection(function(error) {
+        if(error) console.log(error);
+        pool.query("SELECT * FROM clientesenero2023", function(error, result){
+        if(error) console.log(error);
+
+        res.render('disponibilidad.ejs', { clients: result} ); 
+        })
+    
+    })});
+
+
+
+
+router.post('/updatestatus', async (req, res, next) => {
+    const {idstatus} = req.body
+    await pool.query("UPDATE clientes SET status = 'Aprobado' WHERE ID = ?", [idstatus], function(error, result){
+    res.redirect('/admin') 
+})});
+
+
+router.post('/cancelarad', async (req, res, next) => {
+    const {idstatus} = req.body
+    await pool.query("UPDATE clientes SET status = 'Cancelado' WHERE ID = ?", [idstatus], function(error, result){
+    res.redirect('/admin') 
+})});
+
+
+
+router.post('/actualizarespacio', async (req, res, next) => {
+    const diaactualizar = req.body.actualizar;
+    const espacioactualizar = req.body.actualizarespacio;
+    await pool.query("UPDATE clientesenero2023 SET Ocupados = ? WHERE Dia = ?", [espacioactualizar, diaactualizar], function(error, result){
+    res.redirect('/disponibilidad') 
+})});
+
+
+
+
+
+
+
+
+export default router;

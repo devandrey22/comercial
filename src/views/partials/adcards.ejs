@@ -9,7 +9,7 @@
         font-size: 40px;
         font-family: myFirstFont;
         text-decoration: none;
-        padding-top: 35px;">VISUAL</a>
+        padding-top: 35px;">COMERCIAL</a>
 
         <% clients.forEach(function(clients){ %>
             <div style="padding-top: 100px; line-height: 15px; padding: 30px 30px;">
@@ -43,9 +43,11 @@
         style="display: flex; flex-direction: row;  max-width: 100%; flex-wrap: wrap; margin-left: 400px; font-family: 'Raleway', sans-serif; justify-content: space-around; margin-bottom: 30px; padding-bottom: 30px;">
         <% clients.forEach(function(clients){ %>
             <div style="margin: 10px; margin-top: 30px; border-radius: 20px;">
-                <span class="badge badge-success" style="width: 100px;">
+                <div style="justify-content: center; justify-items: center; text-align: center;"> 
+                <span class="badge badge-info" style="width: 100px; font-family: Raleway;" id="adstatus">
                     <%= clients.status%>
                 </span>
+                </div>
                 <div class="card" style="width: 19rem; border-radius: 20px;">
                     <img src="/city2.png" class="card-img-top" alt="..."
                         style=" border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-top-right-radius: 20px; border-top-left-radius: 20px;">

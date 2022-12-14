@@ -8,9 +8,9 @@
           font-weight: bold;
           font-weight: bolder;
           font-size: 35px;
-          font-family: 'Orbitron', sans-serif;
+          font-family: myFirstFont;
           text-decoration: none;
-          padding-top: 35px;">MyTV</a>
+          padding-top: 35px;">COMERCIAL</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -21,9 +21,20 @@
   
   <div style="font-family: 'Raleway', sans-serif; padding-top: 30px; padding-bottom: 10px; padding-left: 20%; display: flex; flex-direction: row; justify-content: start; justify-items: start;">
     <h2 style="padding-right: 50px;">Nuevas solicitudes</h2>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    
+
+
+    <form action="/busquedad"  class="form-inline my-2 my-lg-0">
+      <input type="search" id="inquiry" name="inquiry" class="form-control mr-sm-2"placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+    <form style="padding-left: 20px;" class="form-inline my-2 my-lg-0" action="/updatestatus" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="idstatus" id="idstatus" placeholder="ID" >
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0" >Aprobar</button>
+    </form>
+    <form style="padding-left: 20px;" class="form-inline my-2 my-lg-0" action="/cancelarad" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="idstatus" id="idstatus" placeholder="ID" >
+      <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" >Cancelar</button>
     </form>
   </div>
 
@@ -35,8 +46,8 @@
       <div class="" style="padding-top: 100px;">
           <a href="/admin" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);" active>Nuevas solicitudes</a>
           <a href="/clientes" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Clientes</a>
-          <a href="/anuncios" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Anuncios</a>
           <a href="/disponibilidad" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Disponibilidad</a>
+          <a href="/anuncios" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Anuncios</a>
           <a href="/mensajes" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Mensajes</a>
           <a href="/pagos" style="text-decoration: none;">Pagos</a>
 
@@ -60,51 +71,44 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">ID</th>
-
         <th scope="col">Nombre</th>
         <th scope="col">Email</th>
-        <th scope="col">Type</th>
-        <th scope="col">Title</th>
-        <th scope="col">Package</th>
-        <th scope="col">Dates</th>
-        <th scope="col">Location</th>
-        <th scope="col">Ad Content</th>
-        <th scope="col">Status</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Plan</th>
+        <th scope="col">Fechas a anunciar</th>
+        <th scope="col">Zonas</th>
         <th scope="col">Fecha solicitud</th>
-
-        <th scope="col">Actions</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
-        <% clients.forEach(function(clients){ %>
+          <% 
+          if(clients.lenght!=0) {
+            var i=1;
+            clients.reverse().forEach(function(data) { 
+            
+              %>
          <tr>
         
-        <th scope="row"></th>
-        <td><%= clients.ID %></td>
-        <td><%= clients.Nombre %></td>
-        <td><%= clients.Email %></td>
-        <td><%= clients.Telefono %></td>
-        <td><%= clients.titulo %></td>
-        <td><%= clients.plan %></td>
-        <td><%= clients.fechas %></td>
-        <td><%= clients.zonas %></td>
-        <td><%= clients.fechadesolicitud %></td>
-        <td><%= clients.status %></td>
-        <td>
-          <div style="display: row; font-size: smaller;">
-              <button class="btn-primary">Email</button>
-              <button class="btn-success">Confirmar</button>
-              <button class="btn-danger">Cancelar</button>
-
-          </div>
-        </td>
+        <th scope="row"><%=i %> </th>
+        <td><%= data.ID %></td>
+        <td><%= data.Nombre %></td>
+        <td><%= data.Email %></td>
+        <td><%= data.Telefono %></td>
+        <td><%= data.titulo %></td>
+        <td><%= data.plan %></td>
+        <td><%= data.fechas %></td>
+        <td><%= data.zonas %></td>
+        <td><%= data.fechadesolicitud %></td>
+        <td><%= data.status %></td>
 
       </tr>
-      <% }) %>
-      </tbody>
+      <% i++; })} %>      </tbody>
   </table>
 
   </div>
 </div>
   
+
 

@@ -43,16 +43,19 @@
                         content. Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit.
                     </p>
- -->                <div class="cssformbodyarea"> 
-                    <form class="cssformbody" style=" height: 400px;">
+
+ -->                <div class="cssformbodyarea" style="padding-bottom: 25px;"> 
+                    <form  action="/mensajes" method="POST" class="cssformbody" style=" height: 500px;">
                         <p style="padding: 0px 10px;" >Dejanos un mensaje.</p>
                         <p style="padding: 0px 10px; position: relative; bottom: 5px;" >¡Estaremos felices de asistirte!</p>
+                        <input style="margin-top: 10px; margin-bottom: 15px; background-color: rgba(255,255,255,.4) " id="Email" name="Nombre" placeholder="Tu correo" class="email" type="email" required autofocus />
 
-                    <input style="margin-top: 10px; margin-bottom: 15px;"  name="emailaddress" placeholder="Tu correo" class="email" type="email" required />
-                    <textarea style="margin-top: 10px; margin-bottom: 15px;"  rows="4" cols="50" name="subject" placeholder="Favor ingresa tu mensaje" class="message" required></textarea>
+                    <input style="margin-top: 10px; margin-bottom: 15px; background-color: rgba(255,255,255,.4) " id="Email" name="Email" placeholder="Tu correo" class="email" type="email" required />
+                    <textarea style="margin-top: 10px; margin-bottom: 15px;" id="Mensaje" rows="4" cols="50" name="Mensaje" placeholder="Favor ingresa tu mensaje" class="message" required></textarea>
                     <input style="margin-top: 10px;  margin-bottom: 85px; color: white;"  name="submit" class="btn btnform " type="submit" value="Enviar"/>
                 </form>
             </div>
+
 
                 </div>
                 <!-- Grid column -->

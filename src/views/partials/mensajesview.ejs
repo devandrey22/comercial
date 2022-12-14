@@ -8,9 +8,9 @@
             font-weight: bold;
             font-weight: bolder;
             font-size: 35px;
-            font-family: 'Orbitron', sans-serif;
+            font-family: myFirstFont;
             text-decoration: none;
-            padding-top: 35px;">MyTV</a>
+            padding-top: 35px;">COMERCIAL</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,9 +35,9 @@
         <div class="" style="padding-top: 100px;">
             <a href="/admin" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);" active>Nuevas solicitudes</a>
             <a href="/clientes" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Clientes</a>
-            <a href="/" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Anuncios</a>
+            <a href="/anuncios" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Anuncios</a>
             <a href="/disponibilidad" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Disponibilidad</a>
-            <a href="/" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Mensajes</a>
+            <a href="/mensajes" style="text-decoration: none; border-bottom: 2px solid rgb(253, 253, 253);">Mensajes</a>
             <a href="/" style="text-decoration: none;">Pagos</a>
   
         </div>
@@ -59,56 +59,33 @@
       
     <table class="table table-striped table-hover">
       <thead>
+        
+ 
         <tr>
           <th scope="col">#</th>
           <th scope="col">Date</th>
           <th scope="col">Nombre</th>
           <th scope="col">Email</th>
           <th scope="col">Mensaje</th>
-          <th scope="col">Actions</th>
+          
         </tr>
       </thead>
       <tbody>
+        <% 
+        if(clients.lenght!=0) {
+          var i=1;
+          clients.reverse().forEach(function(data) { 
+          
+            %>
         <tr>
-          <th scope="row">1</th>
-          <td>03/01/2023</td>
-          <td>Mark</td>
-          <td>Otto@outlook.com</td>
-          <td>Hola tengo una consulta</td>
-          <td>
-            <div style="display: row; font-size: smaller;">
-                <button class="btn-success">Reply</button>
-  
-            </div>
-          </td>
-  
+          <th scope="row"><%=i %></th>
+          <td><%= data.Fecha %></td>
+          <td><%= data.Nombre %></td>
+          <td><%= data.Email %></td>
+          <td><%= data.Mensaje %></td>
+
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>03/01/2023</td>
-          <td>Mark</td>
-          <td>Otto@outlook.com</td>
-          <td>Hola tengo una consulta</td>
-          <td>
-            <div style="display: row; font-size: smaller;">
-                <button class="btn-success">Reply</button>
-               
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>03/01/2023</td>
-          <td>Mark</td>
-          <td>Otto@outlook.com</td>
-          <td>Hola tengo una consulta</td>
-          <td>
-            <div style="display: row; font-size: smaller;">
-                <button class="btn-success">Reply</button>
-                
-            </div>
-          </td>
-        </tr>
+        <% i++; })} %>  
       </tbody>
     </table>
   
