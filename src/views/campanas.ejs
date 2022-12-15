@@ -12,6 +12,65 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
+
+<style>
+
+    
+@media only screen and (max-width: 420px) {
+    .popularplan {
+        position: absolute; 
+        height: 300px; 
+        width: 300px; 
+        bottom: 242px; 
+        right: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 395px) {
+    .popularplan {
+        position: absolute; 
+        height: 300px; 
+        width: 300px; 
+        bottom: 242px; 
+        right: 38px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .popularplan {
+        position: absolute; 
+        height: 300px; 
+        width: 300px; 
+        bottom: 262px; 
+        right: 24px;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .popularplan {
+        position: absolute; 
+        height: 300px; 
+        width: 300px; 
+        bottom: 282px; 
+        right: 8px;
+    }
+}
+
+
+@media only screen and (min-width: 800px) {
+   .popularplan {
+    position: absolute;
+    bottom: 242px; 
+    right: 58px;
+    }
+}
+
+
+
+
+
+</style>
 <body style="margin-top: 0px; background-color: GhostWhite; width: 100%;">
 
     <%- include('partials/navbar') %>
@@ -93,7 +152,7 @@
                         </div>
                         <div class="card-body">
                             <div style="display: flex; flex-direction: column; text-align: center; justify-content: center; justify-items: center;">
-                               <img src="/maspopular.png" alt="" style="position: absolute; height: 300px; width: 300px; bottom: 242px; right: 58px;">
+                               <img class="popularplan" src="/maspopular.png" alt="" style="position: absolute; height: 300px; width: 300px; bottom: 242px; right: 58px;">
                                 <div>
                                     <p style="font-family: myFirstFont; font-size: larger; font-weight: bolder">SEMANAL</p>
                                 </div>
@@ -347,7 +406,7 @@
                         </div>
                         <div class="card-body">
                             <div style="display: flex; flex-direction: column; text-align: center; justify-content: center; justify-items: center;">
-                               <img src="/maspopular.png" alt="" style="position: absolute; height: 300px; width: 300px; bottom: 242px; right: 38px;">
+                               <img class="popularplan" src="/maspopular.png" alt="" style="height: 300px; width: 300px;">
                                 <div>
                                     <p style="font-family: myFirstFont; font-size: larger; font-weight: bolder">SEMANAL</p>
                                 </div>
