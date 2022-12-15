@@ -151,6 +151,61 @@ router.post('/infocliente', async (req, res, next) => {
 })
 
 
+
+
+router.post('/infoclientemobile', upload.single('uploaded_file'), async (req, res, next) => {
+    const { nombre, email, telefono, titulo, plan, fechas, zona } = req.body;
+    const newCustomer = {
+        Nombre: nombre,
+        Email: email,
+        Telefono: telefono,
+        titulo: titulo,
+        plan: plan,
+        fechas: fechas,
+        zonas: zona,
+    };
+    await pool.query('INSERT INTO clientes set ?', [newCustomer]);
+
+    var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: 'alissatradingrobot@gmail.com',
+            pass: 'oyufffxxyfehqayv'
+        },
+        tls: {
+            ciphers: "SSLv3",
+        },
+    });
+
+
+    var mailOptions = {
+        from: 'alissatradingrobot@gmail.com',
+        to: 'alertasmarketz@gmail.com',
+        subject: 'ZONA ha recibido un nuevo cliente mobile',
+        text: 'Contáctalo pronto'
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+     console.log(newCustomer);
+     res.render('confirmacion.ejs')
+})
+
+
+
+
+ 
+
+
 router.get('/admin', async (req, res, next) => {
 
     pool.getConnection(function(error) {

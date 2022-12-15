@@ -119,7 +119,7 @@
         font-size: 35px;
         font-family: myFirstFont;
         text-decoration: none;
-        padding-top: 15px;">VISUAL</a>
+        padding-top: 15px;">COMERCIAL</a>
         </div>
     </nav>
 </div>
@@ -207,12 +207,12 @@
 
 
 <div class="cssprefootershowmobile"
-        style="justify-content: center; justify-items: center; text-align: center; padding: 25px 20px;">
+        style="justify-content: center; justify-items: center; text-align: center; padding: 25px 30px;">
 
         <div style="display: flex; flex-direction: column; width: 100%; flex-wrap: wrap; font-family: 'Raleway', sans-serif; justify-content: center; justify-items: center; text-align: center; ">
             <% clients.forEach(function(clients){ %>
                 <div style="margin: 5px; margin-top: 10px; padding-bottom: 20px;">
-                    <span class="badge badge-success" style="width: 100px;">
+                    <span class="badge badge-info" style="width: 100px;">
                         <%= clients.status%>
                     </span>
                     <div class="card" style="width: 100%">
@@ -234,25 +234,27 @@
                         </ul>
                         <div class="card-body"style="display: flex; flex-direction: row; justify-content: space-around; background-color: #6351ce; color: white; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-left: 10%;  padding-right: 10%; ">
                            
-                            <nav class="navbar " >
-                                <div class="container-fluid" style="display: flex; flex-direction: column;">
+                            <nav class="navbar ">
+                                <div class="container-fluid" style="display: flex; flex-direction: column; " >
                                     <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                                         data-bs-target="#navbarToggleExternalContenti" aria-controls="navbarToggleExternalContent"
                                         aria-expanded="false" aria-label="Toggle navigation" >
                                         <span style="color: white; position: relative; margin-bottom: 10px; ">Editar</span>
                                         </a>
-                                    <div class="collapse" id="navbarToggleExternalContenti" style="padding-top: 25px;" >
+
+
+                                    <div class="collapse" id="navbarToggleExternalContenti" style="padding-top: 25px; width: 80%;" >
                                         <div  style="display: flex; flex-direction: column; color: white; align-items: flex-start; align-content: flex-start; background-color: #6351ce; ">
                                            
-                                            <form action="/cambios" method="POST" >
-                                                <input type="email" id="confirmemail" name="confirmemail" placeholder="Confirma tu email" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+                                            <form action="/cambios" method="POST" style="width: 150px;" >
+                                                <input type="email" id="confirmemail" name="confirmemail" placeholder="Confirma tu email" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; width: 250px; position: relative; right: 63px;" autofocus>
                                       <br>
-                                            <input type="text" id="confirmtitulo" name="confirmtitulo" placeholder="Confirma el titulo de tu anuncio" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white;" autofocus>
+                                            <input type="text" id="confirmtitulo" name="confirmtitulo" placeholder="Confirma el titulo de tu anuncio" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; width: 250px; position: relative; right: 63px;" autofocus>
                                             <br>
-                                            <textarea type="text" id="cambiossolicitados" name="cambiossolicitados" placeholder="Cambios a realizar" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; padding-left: 20px;" autofocus></textarea>
+                                            <textarea type="text" id="cambiossolicitados" name="cambiossolicitados" placeholder="Cambios a realizar" style="background-color: rgba(0, 0, 0, 0.484); opacity: 1; color: white; padding-left: 20px; width: 250px; position: relative; right: 63px;" autofocus></textarea>
                         
                                             <br>
-                                            <button class="btn btn-success btn-block" type="submit" value="Enviar"> Enviar </button>
+                                            <button class="btn btn-success btn-block" type="submit" value="Enviar" style="position: relative; right: 13px;"> Enviar </button>
                                             <br>
                                            </form>
                         
