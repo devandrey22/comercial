@@ -332,30 +332,31 @@ body{
 
   .cssass {
     text-decoration: none;
-    box-shadow: inset 0 -1px 0 #6351ce, 0 1px 0 #6351ce;
+    box-shadow: inset 0 -1px 0 rgb(131, 17, 135), 0 1px 0 rgb(131, 17, 135);
     transition: box-shadow .3s;
     color: inherit;
     overflow: hidden;
   }
   
   .cssass:hover {
-    box-shadow: inset 0 -40px 0 #6351ce, 0 2px 0 #6351ce;
+    box-shadow: inset 0 -40px 0 rgb(131, 17, 135), 0 2px 0 rgb(131, 17, 135);
     color: white;
   }
 
 
   .cssassa {
     text-decoration: none;
-    box-shadow: inset 0 -40px 0 #6351ce, 0 1px 0 #6351ce;
+    box-shadow: inset 0 -40px 0 rgb(131, 17, 135), 0 1px 0 rgb(131, 17, 135);
     transition: box-shadow .3s;
     color: inherit;
     overflow: hidden;
   }
   
   .cssassa:hover {
-    box-shadow: inset 0 -40px 0 #6351ce, 0 2px 0 #6351ce;
+    box-shadow: inset 0 -40px 0 rgb(131, 17, 135), 0 2px 0 rgb(131, 17, 135);
     color: white;
   }
+
 
 
 
@@ -381,6 +382,7 @@ body{
     background-position: right;
 
 }
+
 
 .cssredes3 {
   background-image: url("/media1.png");

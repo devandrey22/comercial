@@ -231,7 +231,10 @@ a {
     
     .csstitlewebsitemobile {
         font-size: 40px;
+        height: 115px;
       
+        margin-left: 10px;
+
     }
 
     .cssconfirmacionlaptop {
@@ -305,7 +308,8 @@ a {
 }
     .csstitlewebsitemobile {
         font-size: 40px;
-       
+       height: 115px;
+       margin-left: 10px;
     }
     
 
@@ -380,7 +384,9 @@ a {
     .csstitlewebsitemobile{
         font-size: 70px;
         position: relative;
-        right: 150px;
+        right: 100px;
+       
+
     }
 
 }
@@ -537,7 +543,7 @@ div#slider figure {
     display: table;
     font-size: 24px;
     text-align: center;
-    width: 80%;
+    width: 70%;
     /* divider width */
     margin: 30px auto;
     /* spacing above/below */
@@ -563,16 +569,17 @@ div#slider figure {
 
 .divider span:first-child {
     /* color changes in here */
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#000));
-    background-image: -webkit-linear-gradient(180deg, transparent, #000);
-    background-image: -moz-linear-gradient(180deg, transparent, #000);
-    background-image: -o-linear-gradient(180deg, transparent, #000);
-    background-image: linear-gradient(90deg, transparent, #000);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#3a7fd4));
+    background-image: -webkit-linear-gradient(180deg, transparent, #3a7fd4);
+    background-image: -moz-linear-gradient(180deg, transparent, #3a7fd4);
+    background-image: -o-linear-gradient(180deg, transparent, #3a7fd4);
+    background-image: linear-gradient(90deg, transparent, #3a7fd4);
 }
+
 
 .divider span:nth-child(2) {
     color: #000;
-    padding: 0px 10px;
+    padding: 0px 30px;
     width: auto;
     white-space: nowrap;
 }
@@ -580,10 +587,10 @@ div#slider figure {
 .divider span:last-child {
     /* color changes in here */
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
-    background-image: -webkit-linear-gradient(180deg, #000, transparent);
-    background-image: -moz-linear-gradient(180deg, #000, transparent);
-    background-image: -o-linear-gradient(180deg, #000, transparent);
-    background-image: linear-gradient(90deg, #000, transparent);
+    background-image: -webkit-linear-gradient(180deg, #3a7fd4, transparent);
+    background-image: -moz-linear-gradient(180deg, #3a7fd4, transparent);
+    background-image: -o-linear-gradient(180deg, #3a7fd4, transparent);
+    background-image: linear-gradient(90deg, #3a7fd4, transparent);
 }
 
 
@@ -695,6 +702,15 @@ div#slider figure {
     src: url(/Vonique64.ttf);
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url(/Montserrat-Bold.ttf);
+}
 
 
 
@@ -712,14 +728,14 @@ div#slider figure {
     width: 343px;
     height: 450px;
     padding:30px;
-    border: 0px solid #6351ce;
+    border: 0px solid #3a7fd4;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    background: #6351ce; 
+    background: #3a7fd4; 
     -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
     box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
