@@ -122,8 +122,8 @@ router.post('/infocliente', async (req, res, next) => {
         secure: false,
         requireTLS: true,
         auth: {
-            user: 'alissatradingrobot@gmail.com',
-            pass: 'oyufffxxyfehqayv'
+            user: 'comercialcrmarketing@gmail.com',
+            pass: 'eqvfoogzwqmoagep'
         },
         tls: {
             ciphers: "SSLv3",
@@ -132,8 +132,8 @@ router.post('/infocliente', async (req, res, next) => {
 
 
     var mailOptions = {
-        from: 'alissatradingrobot@gmail.com',
-        to: 'alertasmarketz@gmail.com',
+        from: 'comercialcrmarketing@gmail.com',
+        to: 'comercialcrmarketing@gmail.com',
         subject: 'ZONA ha recibido un nuevo cliente',
         text: 'Contáctalo pronto'
     };
@@ -172,8 +172,8 @@ router.post('/infoclientemobile', upload.single('uploaded_file'), async (req, re
         secure: false,
         requireTLS: true,
         auth: {
-            user: 'alissatradingrobot@gmail.com',
-            pass: 'oyufffxxyfehqayv'
+            user: 'comercialcrmarketing@gmail.com',
+            pass: 'eqvfoogzwqmoagep'
         },
         tls: {
             ciphers: "SSLv3",
@@ -182,8 +182,8 @@ router.post('/infoclientemobile', upload.single('uploaded_file'), async (req, re
 
 
     var mailOptions = {
-        from: 'alissatradingrobot@gmail.com',
-        to: 'alertasmarketz@gmail.com',
+        from: 'comercialcrmarketing@gmail.com',
+        to: 'comercialcrmarketing@gmail.com',
         subject: 'ZONA ha recibido un nuevo cliente mobile',
         text: 'Contáctalo pronto'
     };
