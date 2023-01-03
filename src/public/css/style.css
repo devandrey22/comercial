@@ -142,6 +142,7 @@ a {
     position: relative;
 }
 
+
 .cssnavitem::after {
     content: '';
     display: block;
@@ -149,7 +150,7 @@ a {
     position: absolute;
     left: 50%;
     height: 2px;
-    background: rgb(104, 12, 104);
+    background-color: #3a7fd4;
     transition: cubic-bezier(.77, 0, .18, 1) 0.2s;
     text-decoration: none;
 }
@@ -242,6 +243,15 @@ a {
         display: none;
     }
 
+    .logonav {
+        position: relative;
+        right: 0px;
+    }
+
+    .logonavmobile {
+        position: relative;
+        right: 0px;
+    }
  
 }
 
@@ -330,7 +340,15 @@ a {
 .cssconfirmacionlaptop {
     display: none;
 }
+.logonav {
+    position: relative;
+    right: 0px;
+}
 
+.logonavmobile {
+    position: relative;
+    right: 0px;
+}
 
 }
 
@@ -498,6 +516,13 @@ div#slider figure {
 .cssbackground {
     background-image: url("/MapCR7.png");
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.addbackground {
+    background-image: url("/fondocampana.png");
+    background-size: fill;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -869,6 +894,7 @@ input:focus, textarea:focus {
     color: #fff;
  }
 
+
 .btnform:active {
     margin-top:1px;
     text-shadow: #333333 0 -1px 0;
@@ -887,3 +913,61 @@ input:focus, textarea:focus {
    }
 
 
+
+   
+.cssbuttonanimation {
+    width: auto;
+    height: auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    float:right;
+  border: 0px solid #253737;
+  background: #416b68;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
+  background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+  background: -moz-linear-gradient(top, #2d2172, #6351ce);
+  background: -ms-linear-gradient(top, #2d2172, #6351ce);
+  background: -o-linear-gradient(top, #2d2172, #6351ce);
+  background-image: -ms-linear-gradient(top, #2d2172 0%, #6351ce 100%);
+  padding: 10.5px 21px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  -moz-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  text-shadow: #333333 0 1px 0;
+  color: #e1e1e1;
+}
+
+.cssbuttonanimation:hover {
+  border: 0px solid #253737;
+  text-shadow: #333333 0 1px 0;
+  background: #416b68;
+  background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#416b68));
+  background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+  background: -moz-linear-gradient(top, #2d2172, #6351ce);
+  background: -ms-linear-gradient(top, #2d2172, #6351ce);
+  background: -o-linear-gradient(top, #2d2172, #6351ce);
+  background-image: -ms-linear-gradient(top, #77b2b0 0%, #416b68 100%);
+  color: #fff;
+}
+
+
+.cssbuttonanimation:active {
+  margin-top:1px;
+  text-shadow: #333333 0 -1px 0;
+  border: 0px solid #253737;
+  background: #6da5a3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#416b68), to(#416b68));
+  background: -webkit-linear-gradient(top, #2d2172, #6351ce);
+  background: -moz-linear-gradient(top, #2d2172, #6351ce);
+  background: -ms-linear-gradient(top, #2d2172, #6351ce);
+  background: -o-linear-gradient(top, #2d2172, #6351ce);
+  background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
+  color: #fff;
+  -webkit-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  -moz-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+  box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+ }

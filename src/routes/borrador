@@ -601,3 +601,96 @@
 
 
 <div style="position: relative; bottom: 5px;"></div>
+
+
+
+
+
+<!-- CÓMO VIEW
+ -->
+
+
+
+<div class="cssshowlaptopcampanas">
+    <div class="container" style="padding-top: 35px; background-color: #1c2331;">
+        <div class="row" style="justify-content: space-around; align-content: center; align-items: center;">
+            <div class="card"
+                style="width: 18rem; align-content: center; align-items: center; height: 160px; border-radius: 10px; box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);">
+                <div class="card-body" style="background-color: #3a7fd4; color: ghostwhite; border-radius: 10px;">
+                    <div
+                        style="display: flex; flex-direction: row; align-items: center; align-content: center; justify-content: space-around;">
+                        <div style="display: flex; flex-direction: column; ">
+                            <h5 style="border-radius: 50%;
+                            width: 36px;
+                            height: 36px;                      
+                            background: ghostwhite;
+                            border: 2px solid #3a7fd4;
+                            color: #3a7fd4;
+                            text-align: center; "> <span style="position: relative; top: 3px; font-family: MontserratBold; ">1 </span> </h5>
+                        </div>
+                        <div style="display: flex; flex-direction: column; font-family: MontserratBold; ">
+                            <h5 class="card-title" style="font-size: 18px;">Click en "Empezar"</h5>
+                        </div>
+                    </div>
+                    <p class="card-text" style="text-align: center; font-family: Montserrat; font-size: 15px;">Completa el formulario con tus datos y los de tu anuncio</p>
+                </div>
+            </div>
+
+            <i class="bi bi-arrow-right"></i>
+
+            <div class="card"
+                style="width: 18rem; height: 190px; border-radius: 10px; box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);">
+                <div class="card-body" style="background-color: #3a7fd4; color: ghostwhite; border-radius: 10px;">
+                    <div
+                        style="display: flex; flex-direction: row; align-items: center; align-content: center; justify-content: space-around;">
+                        <div style="display: flex; flex-direction: column;">
+                            <h5 style="border-radius: 50%;
+                            width: 36px;
+                            height: 36px;                     
+                            background: ghostwhite;
+                            border: 2px solid #3a7fd4;
+                            color: #3a7fd4;
+                            text-align: center; "> <span style="position: relative; top: 3px; font-family: MontserratBold;">2 </span> </h5>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <h5 class="card-title" style="position: relative; left: 25px; font-family: MontserratBold; font-size: 18px;" >Recibirás una confirmación</h5>
+                        </div>
+                    </div>
+                    <p class="card-text" style="text-align: center;  font-family: Montserrat; font-size: 15px;">Te enviaremos un correo con la confirmación de tu reservación o con algún otro dato importante</p>
+                </div>
+            </div>
+
+            <i class="bi bi-arrow-right"></i>
+
+
+            <div class="card" style="width: 18rem; border-radius: 10px; box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);">
+                <div class="card-body" style="background-color: #3a7fd4; color: ghostwhite; border-radius: 10px;">
+                    <div
+                        style="display: flex; flex-direction: row; align-items: center; align-content: center; justify-content: space-around;">
+                        <div style="display: flex; flex-direction: column;">
+                            <h5 style="border-radius: 50%;
+                            width: 36px;
+                            height: 36px;
+                            background: ghostwhite;
+                            border: 2px solid #3a7fd4;
+                            color: #3a7fd4;
+                            text-align: center; "> <span style="position: relative; top: 3px; font-family: MontserratBold;">3 </span> </h5>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <h5 class="card-title" style="position: relative; right: 55px; font-family: MontserratBold; font-size: 18px;">Listo</h5>
+                        </div>
+                    </div>
+                    <p class="card-text" style="text-align: center; font-family: Montserrat; font-size: 15px;">Tus anuncios se agendarán enseguida </p>
+                </div>
+            </div>
+        </div>
+        <div class=""
+            style="width: 100%; display: flex; flex-direction: row; justify-content: center; padding-bottom: 25px; padding-top: 70px;">
+            <button class="btn cssbutton" type="button"
+                style="position: relative; bottom: 10px; justify-items: center;  background-color: rgb(131, 17, 135); color: white;  font-weight: bold; padding-left: 60px;
+         padding-right: 60px; padding-top: 10px; padding-bottom: 10px; font-family: MontserratBold"><a href="/anunciate" style="text-decoration: none; color: white;">EMPEZAR</a></button>
+        </div>
+    </div>
+</div>
+
+
